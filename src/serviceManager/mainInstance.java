@@ -15,7 +15,7 @@ public class mainInstance {
 
 
 
-    public static mainInstance getInstance(){
+    synchronized public static mainInstance getInstance(){
         return singletonInstance;
     }
     public void changeState(State new_state){
@@ -25,6 +25,9 @@ public class mainInstance {
         return this.state;
     }
 
-    private mainInstance(){}
+    private mainInstance(){
+        System.out.println("hello");
+        gui.initGui();
+    }
 
 }
