@@ -9,7 +9,7 @@ public abstract class FrameInterface extends JFrame {
 
 
     public FrameInterface(){
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(640, 480);
 
         try {

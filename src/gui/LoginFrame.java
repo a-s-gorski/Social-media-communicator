@@ -20,6 +20,7 @@ public class LoginFrame extends FrameInterface{
         this.add(passwordLabel);
         this.add(passwordTextField);
         this.add(loginButton);
+        this.setVisible(true);
 
 
 

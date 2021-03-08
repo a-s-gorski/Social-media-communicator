@@ -6,7 +6,11 @@ abstract public class State {
 
 
 
-    private void initiateGui(){}
+    public void initiateGui(){}
+    public void exitGui(){
+
+
+    }
     private void changeState(){}
 
 

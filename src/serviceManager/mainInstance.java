@@ -10,7 +10,7 @@ import javax.swing.*;
 public class mainInstance {
     private static final mainInstance singletonInstance = new mainInstance();
     private State state = new MainMenuState();
-    private FrameInterface gui = new MainMenuFrame();
+//    private FrameInterface gui = new MainMenuFrame();
 
 
 
@@ -18,7 +18,7 @@ public class mainInstance {
     synchronized public static mainInstance getInstance(){
         return singletonInstance;
     }
-    public void changeState(State new_state){
+    public void setState(State new_state){
         this.state = new_state;
     }
     public State getState(){
@@ -26,8 +26,8 @@ public class mainInstance {
     }
 
     private mainInstance(){
-        System.out.println("hello");
-        gui.initGui();
+        state.initiateGui();
+
     }
 
 }

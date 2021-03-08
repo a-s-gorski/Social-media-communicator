@@ -5,6 +5,7 @@ import observers.Observer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 
 public class MainMenuFrame extends FrameInterface{
     private JLabel tileLabel = new JLabel("Select Service");
@@ -27,6 +28,9 @@ public class MainMenuFrame extends FrameInterface{
         this.setVisible(true);
 
         System.out.println("hello");
+    }
+    public void exitGui(){
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }
 
 

@@ -1,5 +1,7 @@
 package observers;
 
+import dialog.StateDialog;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
@@ -12,10 +14,10 @@ public class MainMenuObserver extends Observer{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JFrame parentFrame;
+        StateDialog stateDialog = new StateDialog();
         String s = e.getActionCommand();
         switch (s) {
-            case "Login" -> System.out.println("log");
+            case "Login" -> stateDialog.moveMainMenuToLogin();
             case "Register" -> System.out.println("reg");
             case "Exit" -> this.parentFrame.dispatchEvent(new WindowEvent(this.parentFrame, WindowEvent.WINDOW_CLOSING));
         }
