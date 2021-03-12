@@ -1,16 +1,16 @@
 package states;
 
-import gui.FrameInterface;
+import gui.FrameSkeleton;
 import gui.LoginFrame;
 
 public class LoginState extends State{
-    private FrameInterface frameInterface = new LoginFrame();
+    private FrameSkeleton frameSkeleton = new LoginFrame();
 
     public void initiateGui(){
-        frameInterface.initGui();
+        frameSkeleton.initGui();
 
     }
     public void exitGui(){
-        frameInterface.exitGui();
+        frameSkeleton.exitGui();
     }
 }

@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 
-public class MainMenuFrame extends FrameInterface{
+public class MainMenuFrame extends FrameSkeleton {
     private JLabel tileLabel = new JLabel("Select Service");
     private JButton loginButton = new JButton("Login");
     private JButton registerButton = new JButton("Register");
@@ -33,6 +33,15 @@ public class MainMenuFrame extends FrameInterface{
         this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }
 
+    @Override
+    public String getLogin() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
 
 
 }

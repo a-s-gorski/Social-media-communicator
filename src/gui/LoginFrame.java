@@ -3,7 +3,7 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginFrame extends FrameInterface{
+public class LoginFrame extends FrameSkeleton {
     private JLabel titleLabel = new JLabel("Please login");
     private JLabel usernameLabel = new JLabel("Username");
     private JLabel passwordLabel = new JLabel("Password");
@@ -23,8 +23,15 @@ public class LoginFrame extends FrameInterface{
         this.setVisible(true);
 
 
-
-
     }
+
+    public String getLogin(){
+        return this.usernameTextField.getText();
+    }
+    public String getPassword(){
+        return this.passwordTextField.getText();
+    }
+
+
     public void exitGui(){}
 }

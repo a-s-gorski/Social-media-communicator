@@ -1,4 +1,4 @@
 package gui;
 
-public class LoggedUserMenuFrame extends FrameInterface{
+public class LoggedUserMenuFrame extends FrameSkeleton {
 }

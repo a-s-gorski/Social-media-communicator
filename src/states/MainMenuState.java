@@ -1,18 +1,16 @@
 package states;
 
-import gui.FrameInterface;
+import gui.FrameSkeleton;
 import gui.MainMenuFrame;
 
-import javax.swing.*;
-
 public class MainMenuState extends State{
-    FrameInterface frameInterface = new MainMenuFrame();
+    FrameSkeleton frameSkeleton = new MainMenuFrame();
     public void initiateGui(){
-        frameInterface.initGui();
+        frameSkeleton.initGui();
     };
 
     public void exitGui(){
-        frameInterface.exitGui();
+        frameSkeleton.exitGui();
     }
 //    public void changeState(){};
 }

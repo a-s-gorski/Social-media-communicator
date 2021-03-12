@@ -1,14 +1,21 @@
 package dialog;
 
-import serviceManager.mainInstance;
+import serviceManager.MainInstance;
+import states.LoggedUserMenuState;
 import states.LoginState;
-import states.State;
 
 public class StateDialog {
     public void moveMainMenuToLogin(){
-        mainInstance mainInstance = serviceManager.mainInstance.getInstance();
+        MainInstance mainInstance = MainInstance.getInstance();
         mainInstance.getState().exitGui();
         mainInstance.setState(new LoginState());
         mainInstance.getState().initiateGui();
+    }
+    public void moveLoginToLoggedUserMenu(){
+        MainInstance mainInstance = MainInstance.getInstance();
+        mainInstance.getState().exitGui();
+        mainInstance.setState(new LoggedUserMenuState());
+        mainInstance.getState().initiateGui();
+
     }
 }

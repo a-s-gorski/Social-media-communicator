@@ -1,21 +1,19 @@
 package serviceManager;
 
-import gui.FrameInterface;
-import gui.MainMenuFrame;
 import states.MainMenuState;
 import states.State;
 
-import javax.swing.*;
-
-public class mainInstance {
-    private static final mainInstance singletonInstance = new mainInstance();
+public class MainInstance {
+    private static final MainInstance singletonInstance = new MainInstance();
     private State state = new MainMenuState();
+    private String login;
+    private String password;
 //    private FrameInterface gui = new MainMenuFrame();
 
 
 
 
-    synchronized public static mainInstance getInstance(){
+    synchronized public static MainInstance getInstance(){
         return singletonInstance;
     }
     public void setState(State new_state){
@@ -24,8 +22,12 @@ public class mainInstance {
     public State getState(){
         return this.state;
     }
+    public void setLogin(String login){this.login=login;}
+    public void setPassword(String password){this.password=password;}
 
-    private mainInstance(){
+
+
+    private MainInstance(){
         state.initiateGui();
 
     }

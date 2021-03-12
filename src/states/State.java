@@ -1,6 +1,6 @@
 package states;
 
-abstract public class State {
+public abstract class State {
     private String login;
     private String password;
 
