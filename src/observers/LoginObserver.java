@@ -19,10 +19,10 @@ public class LoginObserver extends Observer{
                 MainInstance mainInstance = MainInstance.getInstance();
                 mainInstance.setLogin(this.parentFrame.getLogin());
                 mainInstance.setPassword(this.parentFrame.getPassword());
-                stateDialog.moveMainMenuToLogin();
+                stateDialog.moveLoginToLoggedUserMenu();
+                System.out.println("1");
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + e.getActionCommand());
+
         }
 
     }}

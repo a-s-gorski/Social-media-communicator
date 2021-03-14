@@ -1,5 +1,8 @@
 package gui;
 
+import observers.LoginObserver;
+import observers.Observer;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,6 +13,7 @@ public class LoginFrame extends FrameSkeleton {
     private JTextField usernameTextField = new JTextField();
     private JTextField passwordTextField = new JTextField();
     private JButton loginButton = new JButton("Login");
+    private Observer observer = new LoginObserver(this);
 
     public void initGui(){
         this.setLayout(new GridLayout(4,2));
@@ -20,6 +24,7 @@ public class LoginFrame extends FrameSkeleton {
         this.add(passwordLabel);
         this.add(passwordTextField);
         this.add(loginButton);
+        this.loginButton.addActionListener(this.observer);
         this.setVisible(true);
 
 
@@ -33,5 +38,7 @@ public class LoginFrame extends FrameSkeleton {
     }
 
 
-    public void exitGui(){}
+//    public void exitGui(){
+//
+//    }
 }

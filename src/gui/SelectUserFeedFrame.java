@@ -1,4 +1,4 @@
 package gui;
 
-public class SelectUserFeedFrame {
+public class SelectUserFeedFrame extends FrameSkeleton{
 }

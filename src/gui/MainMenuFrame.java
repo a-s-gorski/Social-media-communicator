@@ -33,15 +33,6 @@ public class MainMenuFrame extends FrameSkeleton {
         this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }
 
-    @Override
-    public String getLogin() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return null;
-    }
 
 
 }
