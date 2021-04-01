@@ -21,7 +21,7 @@ public class MainMenuObserver extends Observer{
         String s = e.getActionCommand();
         switch (s) {
             case "Login" -> stateDialog.moveMainMenuToLogin();
-            case "Register" -> System.out.println("reg");
+            case "Register" -> stateDialog.moveMainMenuToRegister();
             case "Exit" -> this.parentFrame.dispatchEvent(new WindowEvent(this.parentFrame, WindowEvent.WINDOW_CLOSING));
         }
 

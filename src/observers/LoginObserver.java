@@ -14,14 +14,18 @@ public class LoginObserver extends Observer{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        MainInstance mainInstance = MainInstance.getInstance();
         switch (e.getActionCommand()) {
+            case "Back":
+                stateDialog.moveLoginToMainMenu();
+                break;
+
             case "Login":
-                MainInstance mainInstance = MainInstance.getInstance();
                 mainInstance.setLogin(this.parentFrame.getLogin());
                 mainInstance.setPassword(this.parentFrame.getPassword());
                 stateDialog.moveLoginToLoggedUserMenu();
-                System.out.println("1");
                 break;
+
 
         }
 

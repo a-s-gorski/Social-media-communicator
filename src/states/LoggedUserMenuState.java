@@ -8,4 +8,5 @@ public class LoggedUserMenuState extends State{
     public void initiateGui() {
         frameSkeleton.initGui();
     }
+    public void exitGui(){frameSkeleton.exitGui();}
 }

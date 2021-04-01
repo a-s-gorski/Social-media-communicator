@@ -13,10 +13,11 @@ public class LoginFrame extends FrameSkeleton {
     private JTextField usernameTextField = new JTextField();
     private JTextField passwordTextField = new JTextField();
     private JButton loginButton = new JButton("Login");
+    private JButton moveBackButton = new JButton("Back");
     private Observer observer = new LoginObserver(this);
 
     public void initGui(){
-        this.setLayout(new GridLayout(4,2));
+        this.setLayout(new GridLayout(5,2));
         this.add(titleLabel);
         this.add(new JLabel());
         this.add(usernameLabel);
@@ -24,7 +25,11 @@ public class LoginFrame extends FrameSkeleton {
         this.add(passwordLabel);
         this.add(passwordTextField);
         this.add(loginButton);
+        this.add(new JLabel());
+        this.add(moveBackButton);
         this.loginButton.addActionListener(this.observer);
+        this.moveBackButton.addActionListener(this.observer);
+
         this.setVisible(true);
 
 
