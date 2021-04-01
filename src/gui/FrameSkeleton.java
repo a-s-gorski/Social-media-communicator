@@ -25,4 +25,8 @@ public abstract class FrameSkeleton extends JFrame implements FrameMethods{
 
 
     public static void main(String[] args){ }
+
+    public void updateFindFriend(){};
+
+    public void sendInvitation(){};
 }

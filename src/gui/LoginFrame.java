@@ -10,8 +10,8 @@ public class LoginFrame extends FrameSkeleton {
     private JLabel titleLabel = new JLabel("Please login");
     private JLabel usernameLabel = new JLabel("Username");
     private JLabel passwordLabel = new JLabel("Password");
-    private JTextField usernameTextField = new JTextField();
-    private JTextField passwordTextField = new JTextField();
+    private JTextField usernameTextField = new JTextField("a");
+    private JTextField passwordTextField = new JTextField("b");
     private JButton loginButton = new JButton("Login");
     private JButton moveBackButton = new JButton("Back");
     private Observer observer = new LoginObserver(this);

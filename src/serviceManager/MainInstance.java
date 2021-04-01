@@ -25,7 +25,16 @@ public class MainInstance {
     public void setLogin(String login){this.login=login;}
     public void setPassword(String password){this.password=password;}
 
+    public boolean ifLogin(String login, String password){
+        // TODO - implement login
+        if(login.isEmpty() || password.isEmpty()){
+            return false;
+        }
 
+
+        System.out.println(login + " " + password);
+        return true;
+    }
 
     private MainInstance(){
         state.initiateGui();

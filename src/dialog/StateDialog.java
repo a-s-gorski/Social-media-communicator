@@ -33,6 +33,8 @@ public class StateDialog {
     public void moveLoggedUserMenuToLogin() {
 //        System.out.println("hello");
         MainInstance mainInstance = MainInstance.getInstance();
+        mainInstance.setLogin("");
+        mainInstance.setPassword("");
         mainInstance.getState().exitGui();
         mainInstance.setState(new LoginState());
         mainInstance.getState().initiateGui();
@@ -67,7 +69,15 @@ public class StateDialog {
         MainInstance mainInstance = MainInstance.getInstance();
         mainInstance.getState().exitGui();
         mainInstance.setState(new FindFriendState());
+        System.out.println("hello");
         mainInstance.getState().initiateGui();
 
+    }
+
+    public void moveFindFriendToLoggedUserMenu() {
+        MainInstance mainInstance = MainInstance.getInstance();
+        mainInstance.getState().exitGui();
+        mainInstance.setState(new LoggedUserMenuState());
+        mainInstance.getState().initiateGui();
     }
 }

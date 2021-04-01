@@ -21,9 +21,17 @@ public class LoginObserver extends Observer{
                 break;
 
             case "Login":
-                mainInstance.setLogin(this.parentFrame.getLogin());
-                mainInstance.setPassword(this.parentFrame.getPassword());
-                stateDialog.moveLoginToLoggedUserMenu();
+                String login = this.parentFrame.getLogin();
+                String password = this.parentFrame.getPassword();
+                if(mainInstance.ifLogin(login, password)) {
+                    mainInstance.setLogin(this.parentFrame.getLogin());
+                    mainInstance.setPassword(this.parentFrame.getPassword());
+                    stateDialog.moveLoginToLoggedUserMenu();
+                }else{
+                    // TODO - wrong credentials
+                    JOptionPane.showMessageDialog(new JFrame(), "Wrong credentials");
+
+                }
                 break;
 
 
