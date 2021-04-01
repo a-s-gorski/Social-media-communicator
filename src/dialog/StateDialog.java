@@ -80,4 +80,11 @@ public class StateDialog {
         mainInstance.setState(new LoggedUserMenuState());
         mainInstance.getState().initiateGui();
     }
+
+    public void moveLoggedMainMenuToCheckInvitations() {
+        MainInstance mainInstance = MainInstance.getInstance();
+        mainInstance.getState().exitGui();
+        mainInstance.setState(new CheckInvitationsState());
+        mainInstance.getState().initiateGui();
+    }
 }

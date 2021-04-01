@@ -16,6 +16,7 @@ public class LoggedUserMenuObserver extends Observer{
         MainInstance mainInstance = MainInstance.getInstance();
         switch (e.getActionCommand()){
             case "Find friend" -> stateDialog.moveLoggedMainMenuToFindFriend();
+            case "Check invitations" -> stateDialog.moveLoggedMainMenuToCheckInvitations();
             case "Logout" -> stateDialog.moveLoggedUserMenuToLogin();
 
         }

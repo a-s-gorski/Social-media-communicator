@@ -13,7 +13,7 @@ public class FindFriendFrame extends FrameSkeleton {
     private JLabel titleLabel = new JLabel("Find friends");
     private JLabel searchLabel = new JLabel("Insert search input");
     private JTextField searchTextField = new JTextField("src");
-    private JTextField searchButton = new JTextField("Search");
+    private JButton searchButton = new JButton("Search");
     private JLabel selectFriend = new JLabel("Select friend");
     private JComboBox friendsComboBox = new JComboBox();
     private JButton sendInvitationButton = new JButton("Send invitation");
@@ -21,7 +21,7 @@ public class FindFriendFrame extends FrameSkeleton {
     private JButton moveBackButton = new JButton("Move back");
 
     private Observer observer = new FindFriendObserver(this);
-    private ArrayList<String> selectedFriends = new ArrayList<String>();
+    private ArrayList<String> selectedFriends = new ArrayList<>();
 
     public void updateFindFriend(){
         // TODO - get results from db
