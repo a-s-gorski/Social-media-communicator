@@ -1,5 +1,8 @@
 package gui;
 
+import observers.CheckInvitationsObserver;
+import observers.Observer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -13,10 +16,11 @@ public class CheckInvitationsFrame extends FrameSkeleton{
     private JLabel totalInvitationsLabel = new JLabel("Total invitations : 0");
     private JButton refreshButton = new JButton("Update");
     private JButton moveBackButton = new JButton("Move Back");
+    private Observer observer = new CheckInvitationsObserver(this);
 
 
     public void initGui(){
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 10; i++){
             invitationSources.add("user" + i);
         }
 
@@ -31,6 +35,10 @@ public class CheckInvitationsFrame extends FrameSkeleton{
         System.out.println(selectedInvitations.size());
 
         this.updateInvitationsFeed();
+        for(int i = 0; i < 10; i++){
+            acceptButtons.get(i).addActionListener(observer);
+            declineButtons.get(i).addActionListener(observer);
+        }
         this.setVisible(true);
 
 
@@ -39,7 +47,7 @@ public class CheckInvitationsFrame extends FrameSkeleton{
 
 
 
-    private void deleteInvitation(String sender){
+    public void deleteInvitation(String sender){
         try{
             invitationSources.remove(sender);
             selectedInvitations.remove(sender);
@@ -54,26 +62,33 @@ public class CheckInvitationsFrame extends FrameSkeleton{
 
     private void updateSelectedMessages(){
         // using default copying constructor
-        selectedInvitations = new ArrayList<>(invitationSources.stream().limit(10).collect(Collectors.toList()));
+        this.selectedInvitations = new ArrayList<>(invitationSources.stream().limit(10).collect(Collectors.toList()));
 
     }
 
-    private void updateInvitationsFeed(){
+    public ArrayList<String> getSelectedInvitations(){
+        return this.selectedInvitations;
+    }
+
+
+    public void updateInvitationsFeed(){
         this.getContentPane().removeAll();
         this.repaint();
-        this.setLayout(new GridLayout(12,3));
+        this.setLayout(new GridLayout(24,1));
+
+        this.updateSelectedMessages();
+
 
         for(int i = 0; i < selectedInvitations.size(); i++){
             this.add(new JLabel(selectedInvitations.get(i)));
             this.add(acceptButtons.get(i));
             this.add(declineButtons.get(i));
 
-
-
         }
         this.add(totalInvitationsLabel);
         this.add(refreshButton);
         this.add(moveBackButton);
+        this.setVisible(true);
 
     }
 

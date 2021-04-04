@@ -24,3 +24,5 @@
 /out/production/Social-media-communicator/states/State.class
 /out/production/Social-media-communicator/adapters/StateAdapter.class
 /out/production/Social-media-communicator/dialog/StateDialog.class
+/out/production/Social-media-communicator/gui/CheckInvitationsFrame.class
+/out/production/Social-media-communicator/observers/CheckInvitationsObserver.class
